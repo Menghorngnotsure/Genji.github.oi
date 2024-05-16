@@ -1,194 +1,277 @@
-
-<!Doctype html>
-<html lang="en">
-    <head>
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cssstyle.css">
-    <link rel="icon" type="image/x-icon" href="images/icon.jpg">
     <title>College of Science and Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssstyle.css">
+    <link rel="icon" type="image/x-icon" href="image/icon.jpg">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Dropdown Button */
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #e8491d;
+}
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
         .container {
-            width: 80%;
+            width: 100%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
         }
-        header {
-            background:wheat;
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+        
+        nav {
+            background: #0056b3;
+            color: #fff;
+            padding:40px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
         }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
+        nav ul {
             list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover, nav .current a {
+            background: #e8491d;
+            transition: background-color 0.3s;
+        }
+        h1, h2, h3, p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .slide-in {
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .scale-up {
+            animation: scaleUp 0.5s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                text-align: left;
+            }
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+        }
+        header {
+            background: #e8491d;
+            color: #fff;
+            padding: 40px 0;
             text-align: center;
         }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
-        header #branding {
-            float: left;
+
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
-        header #branding h1 {
+
+        section {
+            padding: 20px 0;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
             margin: 0;
         }
-        header nav {
-            float: right;
-            margin-top: 10px;
+        marquee {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
         }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ff1f1f;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight" style= "color: #0f0ff1; font-family: AKbalthom Superhero;">College of Science and Technology University of Cambodia</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="majors.html">Majors</a></li>
-                    <li><a href="labs.html">Labs</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-</body>
-</html>
-    </head>
-    <body>
-      <style>
-        marquee{
-      width: 100%;
-      color: aliceblue;
-      font-family: Alfredo Heavy;
-      background-color: blue;
-        }
-  </style>
-<h1 id="id1">
-<marquee behavior="scroll" direction= "right" scrollamount="11">
-<img src="images/photo_2024-04-23_11-59-08.jpg" alt="Cost slide" width="100" height="50">ស្វាគមន័ IT Woman in College Science and Technology
-</marquee>
-</h1>
-<center>
-<img src="images/pic 1.jpg" width="32%">
-<img src="images/pic 2.jpg" width="32%">
-<img src="images/pic 3.jpg" width="32%">
-</center>
-<p style="font-family: Khmer OS Niroth;">សូមស្វាគមន៏មកកាន់មហាវិទ្យាល័យវិទ្យាសាស្ត្រ​ និងបច្ចេកវិទ្យានៃសកលវិទ្យាល័យកម្ពុជា។​ សម្រាប់ប្អូនៗសិក្សានុសិស្ស ដែលមានបំណងចង់បន្តការសិក្សាថ្នាក់បរិញ្ញាប័ត្ររង និងថ្នាក់បរិញ្ញាប័ត្រ។ សូមចុះឈ្មោះជាមួយយើងឥលូវនេះឬអាចអញ្ចើញមកកាន់សកលវិទ្យាល័យផ្ទាល់ក៏បាន។</p>
-<p style="font-family: Arial Black;">Welcome to College of Science and Technology of The University of Cambodia. For everyone who wishes to pursue fo any AA and BA degrees of the study program. please register now or visit the campus of The University of Cambodia.</p> 
-<h2 class="head">Major Offering in College of Science and Technology</h2>
-
-<title>Simple Table Example</title>
-    <style>
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 10px 0;
         }
         th, td {
-            border: 1px solid wheat;
+            border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
         th {
-            background-color: wheat
-            ;
+            background-color: #0056b3;
+            color: #fff;
         }
-    </style>
-</head>
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; 
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+        </style>
+    </head>
 <body>
-
-<h2>Simple Table Example</h2>
-
-<table>
-    <tr>
-        <th>Major</th>
-        <th>Associate, Bachelor</th>
-        <th>Master,PhD</th>
-    </tr>
-    <tr>
-        <td>Computer Science (offering)</td>
-        <td>AA , BB</td>
-        <td>MS and PhD</td>
-    </tr>
-    <tr>
-        <td>Information Technology (offering)</td>
-        <td>BA</td>
-        <td>MS</td>
-    </tr>
-    <tr>
-        <td>Electronics and Telecommunications (Not yet Offering)</td>
-        <td>BA</td>
-        <td>MS</td>
-    </tr>
-</table>
-<style>
-    .head {
-        color: white;
-        background-color: #0f0ff1;
-        text-align: center;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-    }
-    </style>
-    <h2 class="head">College of Science and Technology Computer Labs</h2>
-<img src="images/pic 4.jpg" width="40%" height=""><img src="images/pic 5.jpg" width="40%"><img src="images/pic 6.jpg" width="40%"><img src="images/pic 7.jpg" width="40%">
-<h2><caption><center style="background-color: #0f0ff1; color: #ddd;">Computer Labs of University Cambodia</center></caption></h2>
-<table class="table" align="center">
-    <tr>
-        <th>Multimedia Lab</th>
-        <th>E-Learning</th>
-        <th>Networking Lab</th>
-        <th>IT-Center Lab</th>
-    </tr>
-    <tr>
-        <td>Graphic Design</td>
-        <td>Graphic Design</td>
-        <td>Networking Design</td>
-        <td>Computer Application</td>
-    </tr>
-    <tr>
-        <td>Computer Application</td>
-        <td>Produce Video Contents</td>
-        <td>Networking Configuration</td>
-        <td>Software Development</td>
-    </tr>
-    <tr>
-        <td>Mobile Application</td>
-        <td>E-Learning Development</td>
-        <td>Security Systems</td>
-        <td>Database Management</td>
-    </tr>
-</table>
+    <div class="banner">
+        <img src="image/banner.jpg" alt="College of Science and Technology Banner" style="width:100%; height:auto;">
+            	</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="current">Home</a></li> 
+                        <li><a href="News.html">News</a></li>
+                        <li><a href="Faculty.html">Faculty Members</a></li>
+                        <li><a href="training.html">Professional Training</a></li>
+                        <li class="dropdown">
+                            <a href="Degree.html" class="dropbtn">Degree Programs</a>
+                            <div class="dropdown-content">
+                            <a href="It.html">Information Technology since2003</a>
+                            <a href="cs.html">Computer Science Since 2003</a>
+                            <a href="etc.html">Electonics and Telecommunication since 2003</a>
+                            <a href="gdm.html">Graphi Design And MuliTimedia New 2025</a>
+                            <a href="Bmit.html">Businness Management Information Technology New 2025</a>
+                            <a href="network.html">Network Engineering and cyber Security New 2025 </a>
+                            <a href="data.html"> Data Science and Artificial Interlligence New 2025</a>           
+                     </div>
+                     <li class="dropdown">
+                        <a href="Degree.html" class="dropbtn">Computer Laps</a>
+                        <div class="dropdown-content">
+                            <a href="multimedia.html">Multimedia lap</a>
+                            <a href="elearning.html">E-learning lap</a>
+                            <a href="netlap.html">Network lap</a>
+                            <a href="itcenter.html">It Center lap</a>
+                        </div>
+                    </li>
+                    
+              </li>
+         </ul>
+    </nav>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <h1 id="id1">
+    </h1>
+    <p style="font-size: larger;">  សូមស្វាគមន៏មកកាន់មហាវិទ្យាល័យវិទ្យាសាស្ត្រ  និងបច្ចេកវិទ្យានៃសកលវិទ្យាល័យកម្ពុជា។  សម្រាប់ប្អូនៗសិក្សានុសិស្ស ដែលមានបំណងចង់បន្តការសិក្សាថ្នាក់បរិញ្ញាប័ត្ររង និងថ្នាក់បរិញ្ញាប័ត្រ។ សូមចុះឈ្មោះជាមួយយើងឥលូវនេះឬអាចអញ្ចើញមកកាន់សកលវិទ្យាល័យផ្ទាល់ក៏បាន។</p>
+    <p style="font-size: large;">  Welcome to College of Science and Technology of The University of Cambodia. For everyone who wishes to pursue fo any AA and BA degrees of the study program. please register now or visit the campus of The University of Cambodia.</p>
+    <img src="image/1.jpg" width="50%">
+    <img src="image/2.JPG" width="50%">
+    <img src="image/3.jpg" width="50%">
+    </cente>
+    <marquee behavior="scroll" direction="right" scrollamount="11">
+        <img src="image/cost.jpg" width="120">ស្វាគមន័ EXPERT College of Science and Technology
+    </marquee>
+    <center>
+        <img src="image/4.jpg" width="50%">
+        <img src="image/5.JPG" width="50%">
+        <img src="image/6.jpg" width="50%">
+        </center>
+    <footer class="container fade-in">
+        <img src="image/uc.png" width="35px"><p>© 2024 College of Science and Technology</p>
+    </footer>
 </body>
 </html>
-
